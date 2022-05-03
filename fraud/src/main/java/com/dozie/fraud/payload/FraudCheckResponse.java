@@ -1,4 +1,4 @@
-package com.dozie.fraud.payload;
-
-public record FraudCheckResponse(Boolean isFraudster) {
-}
+//package com.dozie.fraud.payload;
+//
+//public record FraudCheckResponse(Boolean isFraudster) {
+//}

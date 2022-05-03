@@ -1,8 +1,9 @@
 package com.dozie.customer.service;
 
+import com.dozie.client.model.FraudClient;
+import com.dozie.client.payload.FraudCheckResponse;
 import com.dozie.customer.model.Customer;
 import com.dozie.customer.payload.CustomerRegistrationRequest;
-import com.dozie.customer.payload.FraudCheckResponse;
 import com.dozie.customer.repo.CustomerRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -14,6 +15,7 @@ public class CustomerService {
 
     private final CustomerRepository customerRepository;
     private final RestTemplate restTemplate;
+    private final FraudClient fraudClient;
 
     public void registerCustomer(CustomerRegistrationRequest customerRequest) {
         Customer customer = Customer.builder()
@@ -22,10 +24,11 @@ public class CustomerService {
                 .email(customerRequest.email())
                 .build();
         customerRepository.saveAndFlush(customer);
-        FraudCheckResponse response = restTemplate.getForObject(
-                "http://localhost:7081/api/v1/fraud-check/{customerId}",
-                FraudCheckResponse.class,
-                customer.getId());
+//         = restTemplate.getForObject(
+//                "http://FRAUD/api/v1/fraud-check/{customerId}",
+//                FraudCheckResponse.class,
+//                customer.getId());
+        FraudCheckResponse response = fraudClient.isFraudster(customer.getId());
         if (response != null) {
             if (response.isFraudster()) {
                 throw new IllegalStateException("this is a fraud");
