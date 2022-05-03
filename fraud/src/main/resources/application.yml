@@ -1,0 +1,14 @@
+server:
+  port: 7081
+spring:
+  application:
+    name: fraud
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/fraud
+    username: root
+    password: material4u@
+  jpa:
+    hibernate.ddl-auto: update
+    generate-ddl: true
+    show-sql: true
