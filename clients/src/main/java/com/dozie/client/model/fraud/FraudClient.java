@@ -1,4 +1,4 @@
-package com.dozie.client.model;
+package com.dozie.client.model.fraud;
 
 import com.dozie.client.payload.FraudCheckResponse;
 import org.springframework.cloud.openfeign.FeignClient;
