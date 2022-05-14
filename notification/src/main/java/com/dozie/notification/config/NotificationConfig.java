@@ -17,7 +17,7 @@ public class NotificationConfig {
     @Value("${rabbitmq.exchanges.internal}")
     private String internalExchange;
 
-    @Value("${rabbitmq.queues.internal}")
+    @Value("${rabbitmq.queues.notification}")
     private String queueNotification;
 
     @Value("${rabbitmq.routing-keys.internal-notification}")
