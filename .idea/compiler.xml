@@ -16,5 +16,8 @@
         <module name="customer" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="test" target="18" />
+    </bytecodeTargetLevel>
   </component>
 </project>
