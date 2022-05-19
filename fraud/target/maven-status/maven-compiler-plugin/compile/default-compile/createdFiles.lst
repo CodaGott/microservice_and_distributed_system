@@ -1,6 +1,0 @@
-com\dozie\fraud\FraudApplication.class
-com\dozie\fraud\model\FraudCheckHistory$FraudCheckHistoryBuilder.class
-com\dozie\fraud\repo\FraudCheckHistoryRepository.class
-com\dozie\fraud\model\FraudCheckHistory.class
-com\dozie\fraud\controller\FraudController.class
-com\dozie\fraud\service\FraudCheckService.class

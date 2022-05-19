@@ -1,8 +1,0 @@
-com\dozie\customer\payload\CustomerRegistrationRequest.class
-com\dozie\customer\repo\CustomerRepository.class
-com\dozie\customer\CustomerApplication.class
-com\dozie\customer\service\CustomerService.class
-com\dozie\customer\model\Customer.class
-com\dozie\customer\controller\CustomerController.class
-com\dozie\customer\model\Customer$CustomerBuilder.class
-com\dozie\customer\config\CustomerConfig.class
