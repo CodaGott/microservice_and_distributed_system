@@ -1,4 +1,0 @@
-com\dozie\client\payload\FraudCheckResponse.class
-com\dozie\client\model\fraud\FraudClient.class
-com\dozie\client\model\notification\NotificationClient.class
-com\dozie\client\model\notification\NotificationRequest.class
