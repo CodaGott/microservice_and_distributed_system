@@ -1,8 +1,0 @@
-com\dozie\notification\model\Notification$NotificationBuilder.class
-com\dozie\notification\model\Notification.class
-com\dozie\notification\NotificationApplication.class
-com\dozie\notification\repo\NotificationRepository.class
-com\dozie\notification\config\NotificationConfig.class
-com\dozie\notification\rabbitmq\NotificationConsumer.class
-com\dozie\notification\service\NotificationService.class
-com\dozie\notification\controller\NotificationController.class
