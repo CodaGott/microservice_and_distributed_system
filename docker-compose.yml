@@ -38,3 +38,18 @@ services:
     ports:
       - "5672:5672"
       - "15672:15672"
+  eureka-server:
+    image: codagott/eureka-server:latest
+    container_name: eureka-server
+    ports:
+      - "8761:8761"
+    depends_on:
+      - zipkin
+  apigateway:
+    image: codagott/apigateway:latest
+    container_name: eureka-server
+    ports:
+      - "8083:8083"
+    depends_on:
+      - zipkin
+      - eureka-server
