@@ -1,37 +1,11 @@
 services:
-#  postgres:
-#    container_name: postgres
-#    image: postgres
-#    environment:
-#      POSTGRES_USER: dozie
-#      POSTGRES_PASSWORD: ThisP@55W0rd
-#      PGDATA: /data/postgres
-#    volumes:
-#      - postgres:/data/postgres
-#    ports:
-#      - "5432:5432"
-#    networks:
-#      - postgres
-#    restart: unless-stopped
-#  pgadmin:
-#    container_name: pgadmin
-#    image: dpage/pgadmin4
-#    environment:
-#      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-pgadmin4@pgadmin.org}
-#      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
-#      PGADMIN_CONFIG_SERVER_MODE: 'False'
-#    volumes:
-#      - pgadmin:/var/lib/pgadmin
-#    ports:
-#      - "5050:80"
-#    networks:
-#      - postgres
-#    restart: unless-stopped
   zipkin:
     image: openzipkin/zipkin
     container_name: zipkin
     ports:
       - "9411:9411"
+    networks:
+        - spring
   rabbitmq:
     image: rabbitmq:3.9.11-management-alpine
     container_name: rabbitmq
@@ -43,13 +17,24 @@ services:
     container_name: eureka-server
     ports:
       - "8761:8761"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    networks:
+      - spring
     depends_on:
       - zipkin
   apigateway:
     image: codagott/apigateway:latest
-    container_name: eureka-server
+    container_name: apigateway
     ports:
       - "8083:8083"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    networks:
+      - spring
     depends_on:
       - zipkin
       - eureka-server
+networks:
+  spring:
+    driver: bridge

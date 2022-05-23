@@ -6,8 +6,7 @@ eureka:
     register-with-eureka: false
     service-url:
       defaultZone: http://localhost:${server.port}/eureka-server
+
 spring:
   application:
     name: eureka-server
-  zipkin:
-    base-url: http://zipkin:9411
