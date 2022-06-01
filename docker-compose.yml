@@ -38,3 +38,8 @@ services:
 networks:
   spring:
     driver: bridge
+  java:
+    container_name: javaFordocker
+    image: openjdk:18.0.1.1
+    volumes:
+      - C:\Users\DOZIE\Documents\MyProject\microservice
